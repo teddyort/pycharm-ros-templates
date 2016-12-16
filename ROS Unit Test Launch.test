@@ -1,0 +1,3 @@
+<launch>
+   <test test-name="$test_name" pkg="$package" type="${test_name}.py" />
+</launch>
