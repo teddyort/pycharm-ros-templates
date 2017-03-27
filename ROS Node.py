@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 
-# Forward Kinematics Node
+# $node_name
 # Author: Teddy Ort
 # Inputs: 
 # Outputs: 
