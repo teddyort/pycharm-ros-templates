@@ -13,6 +13,8 @@ class $NodeName(object):
 
         rospy.loginfo("[%s] has started", self.node_name)
 
+    def loginfo(self, msg):
+        rospy.loginfo("[%s] %s", self.node_name, msg)
 
 if __name__ == '__main__':
     rospy.init_node('$node_name', anonymous=False)
