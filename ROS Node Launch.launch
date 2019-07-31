@@ -1,16 +1,20 @@
 <launch>
     <arg name="pkg_name" value="$pkg_name"/>
     <arg name="node_name" default="$node_name"/>
+    <arg name="node_type" default="${node_name}.py"/>
 
-    <arg name="veh" doc="Name of vehicle. ex: blue_prius"/>
     <arg name="config" default="baseline" doc="Specify a config."/>
     <arg name="param_file_name" default="default" doc="Specify a param file. ex:default." />
     <arg name="output" default="screen" doc="output display" />
     <arg name="req" default="true"/>
 
-    <group ns="$(arg veh)">
-        <node name="$(arg node_name)" pkg="$(arg pkg_name)" type="$(arg node_name).py" output="$(arg output)" required="$(arg req)">
-            <rosparam command="load" file="$(find launch)/config/$(arg config)/$(arg pkg_name)/$(arg param_file_name).yaml"/>
-        </node>
-    </group>
+    <node 	name="$(arg node_name)" 
+    		pkg="$(arg pkg_name)" 
+    		type="$(arg node_type)" 
+    		output="$(arg output)" 
+    		required="$(arg req)">
+    		
+        <rosparam 	command="load" 
+        			file="$(find launch)/config/$(arg config)/$(arg pkg_name)/$(arg param_file_name).yaml"/>
+    </node>
 </launch>
